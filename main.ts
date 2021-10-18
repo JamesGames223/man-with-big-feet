@@ -296,6 +296,7 @@ function Character_Animations () {
     characterAnimations.rule(Predicate.MovingRight)
     )
 }
+let mySprite: Sprite = null
 let player_1: Sprite = null
 player_1 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
@@ -320,3 +321,23 @@ tiles.setTilemap(tilemap`level2`)
 scene.cameraFollowSprite(player_1)
 tiles.placeOnRandomTile(player_1, sprites.dungeon.floorLight2)
 Character_Animations()
+game.onUpdate(function () {
+    mySprite = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Enemy)
+})
